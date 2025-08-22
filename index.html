@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regconize Deface Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+    </style>
+</head>
+
+<body class="bg-pink-100">
+    <p>xin chao</p>
+    <h1 align="center">Wellcome to Recognize Deface Website</h1>
+    <p align="center">This is a tool where you can check whether the website is being defaced or not</p>
+    
+    <div class="h-screen w-full flex items-center justify-center">
+        <div class="text-lg drag-area w-full lg:w-88 rounded-2xl border-2 border-dashed border-neutral-5 p-6 flex flex-col items-center justify-center text-center">
+            <header>Drop and Release picture to upload here</header>
+            <span class="my-3">Or</span>
+            <button class="px-4 py-3 rounded bg-pink-500">Browse file</button>
+            <input type="file" hidden name="" id="">
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
