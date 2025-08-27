@@ -12,14 +12,30 @@ input.addEventListener('change', ()=>{
     showFile(file);
 })
 
+dropArea.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    dragText.textContent = "Release to Upload File";
+})
+
+dropArea.addEventListener('dragleave', (event) => {
+    event.preventDefault();
+    dragText.textContent = "Drag & Release to Upload File";
+})
+
+dropArea.addEventListener('drop', (event) => {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    showFile(file);
+})
+
 function showFile(file){
-    let fileType = file.type;
-    let validExtensions = ['image/jpeg', 'image/jpg', 'image/png'];
+    const fileType = file.type;
+    const validExtensions = ['image/jpeg', 'image/jpg', 'image/png'];
     if (validExtensions.includes(fileType)){
-        let fileReader = new FileReader();
+        const fileReader = new FileReader();
         fileReader.onload = () => {
-            let fileURL = fileReader.result;
-            let imgTag = `<img src="${fileURL}" alt="">`;
+            const fileURL = fileReader.result;
+            const imgTag = `<img src="${fileURL}" alt="">`;
             dropArea.innerHTML = imgTag;
         }
         fileReader.readAsDataURL(file);
